@@ -3,7 +3,9 @@ import path from "path";
 
 import { LanguageConfig } from ".";
 
-interface CompileAndRunOptionsJava {}
+interface CompileAndRunOptionsJava {
+  release: string;
+}
 
 // This script renames the source file to the expected name (if necessary) automatically
 // The result file's name with ".class" suffix removed will be written to stdout (the extra info file)
@@ -16,9 +18,9 @@ export const languageConfig: LanguageConfig<CompileAndRunOptionsJava> = {
     sourceFilename: "Main.java",
     binarySizeLimit: 5 * 1024 * 1024 // 5 MiB
   }),
-  compile: ({ sourcePathInside, binaryDirectoryInside }) => ({
+  compile: ({ compileAndRunOptions, sourcePathInside, binaryDirectoryInside }) => ({
     script: compileScript,
-    parameters: [sourcePathInside, binaryDirectoryInside],
+    parameters: [sourcePathInside, binaryDirectoryInside, `--release ${compileAndRunOptions.release}`],
     time: 20000,
     memory: 1024 * 1024 * 1024 * 2,
     process: 30,

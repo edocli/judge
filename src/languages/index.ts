@@ -85,15 +85,15 @@ const languageList = [
   "cpp",
   "c",
   "java",
-  "kotlin",
-  "pascal",
+  // "kotlin",
+  // "pascal",
   "python",
-  "rust",
-  "swift",
-  "go",
-  "haskell",
-  "csharp",
-  "fsharp"
+  // "rust",
+  // "swift",
+  // "go",
+  // "haskell",
+  // "csharp",
+  // "fsharp"
 ];
 
 /* eslint-disable import/no-dynamic-require */

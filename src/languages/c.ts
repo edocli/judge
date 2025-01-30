@@ -4,7 +4,7 @@ interface CompileAndRunOptionsC {
   compiler: string;
   std: string;
   O: string;
-  m: string;
+  // m: string;
 }
 
 export const languageConfig: LanguageConfig<CompileAndRunOptionsC> = {
@@ -25,7 +25,8 @@ export const languageConfig: LanguageConfig<CompileAndRunOptionsC> = {
       "-Wall",
       "-Wextra",
       "-Wno-unused-result",
-      `-m${compileAndRunOptions.m}`,
+      // `-m${compileAndRunOptions.m}`,
+      "-m64",
       "-march=native",
       sourcePathInside
     ],
